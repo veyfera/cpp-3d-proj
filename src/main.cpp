@@ -34,7 +34,7 @@ int main()
         {
             case CIRCLE:
                 curves.push_back(new circle::Circle(radiusX));
-                circles.push_back((circle::Circle*)&curves[i]);
+                circles.push_back((circle::Circle*)curves[i]);
                 break;
             case ELLIPSE:
                 radiusY = distr_double(gen);
@@ -70,6 +70,12 @@ int main()
     {
         cout << c->getRadius() << endl;
     }
+    //double radiiSum = 0;
+//#pragma omp parallel for reduction (+:sum)
+    //for(circle::Circle* c: circles)
+    //{
+        //radiiSum = radiiSum+=c->getRadius();
+    //}
     
     return 0;
 }
