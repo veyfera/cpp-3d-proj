@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <iostream>
 #include <random>
+#include <omp.h>
 
 void printCoordinates(Point p);
 
@@ -70,12 +71,17 @@ int main()
     {
         cout << c->getRadius() << endl;
     }
-    //double radiiSum = 0;
-//#pragma omp parallel for reduction (+:sum)
-    //for(circle::Circle* c: circles)
-    //{
-        //radiiSum = radiiSum+=c->getRadius();
-    //}
+
+    double radiiSum = 0;
+    unsigned int cn = circles.size();
+
+#pragma omp parallel for reduction (+:radiiSum)
+    for(unsigned int i = 0; i<cn; i++)
+    {
+        radiiSum += circles[i]->getRadius();
+    }
+
+    cout << "Radii sum: " << radiiSum << endl;
     
     return 0;
 }
