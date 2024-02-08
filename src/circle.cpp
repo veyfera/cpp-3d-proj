@@ -29,7 +29,6 @@ namespace circle
         double x = radius * cos(t);
         double y = radius * sin(t);
         double z = 0;
-        cout << "point at: x=" << x << " y="<< y << " z=" << z << endl;
         return {x, y, z};
     }
 

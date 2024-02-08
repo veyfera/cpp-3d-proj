@@ -8,6 +8,7 @@ namespace helix
         public:
         Helix(double radius, double step);
         
+        void setStep(double step);
         Point getPoint(double t);
         Point getDerivative(double t);
         // use getX, getY, getZ for inheritance

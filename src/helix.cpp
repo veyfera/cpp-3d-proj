@@ -7,13 +7,17 @@ namespace helix
     Helix::Helix(double r, double s)
     : circle::Circle(r)
     {
-        if(r<= 0 || step <= 0)
+        setType(HELIX);
+        setRadius(r);
+        setStep(s);
+    }
+
+    void Helix::setStep(double s)
+    {
+        if(s <= 0)
         {
             cerr << "radius and step must me positive" << endl;
         }
-
-        setType(HELIX);
-        setRadius(r);
         step = s;
     }
     

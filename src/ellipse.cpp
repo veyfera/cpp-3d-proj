@@ -38,7 +38,6 @@ namespace ellipse
         double x = -radiusX * sin(t);
         double y = radiusY * cos(t);
         double z = 0;
-        cout << "derr at t:" << t << " x=" << x << " y="<< y << " z=" << z << endl;
         return {x, y, z};
     }
 };
