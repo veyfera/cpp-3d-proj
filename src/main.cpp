@@ -56,21 +56,21 @@ int main()
 
         cout << "--------------------------------------" << endl;
     }
-    cout << curves.size() << " curves in vector" << endl;
-    cout << circles.size() << " circles in vector" << endl;
+    //cout << curves.size() << " curves in vector" << endl;
+    //cout << circles.size() << " circles in vector" << endl;
 
-    for (circle::Circle* c: circles)
-    {
-        cout << c->getRadius() << endl;
-    }
+    //for (circle::Circle* c: circles)
+    //{
+        //cout << c->getRadius() << endl;
+    //}
 
     sort(circles.begin(), circles.end(), radiusLess);
-    cout << "------sorted circles-----------" << endl;
+    //cout << "------sorted circles-----------" << endl;
 
-    for (circle::Circle* c: circles)
-    {
-        cout << c->getRadius() << endl;
-    }
+    //for (circle::Circle* c: circles)
+    //{
+        //cout << c->getRadius() << endl;
+    //}
 
     double radiiSum = 0;
     unsigned int cn = circles.size();
@@ -81,7 +81,7 @@ int main()
         radiiSum += circles[i]->getRadius();
     }
 
-    cout << "Radii sum: " << radiiSum << endl;
+    //cout << "Radii sum: " << radiiSum << endl;
     
     return 0;
 }
