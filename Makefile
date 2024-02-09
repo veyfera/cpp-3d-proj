@@ -10,19 +10,19 @@ all:	$(obj_files) main.o
 	$(CC) -fopenmp -o $(APP) $^
 
 define build-obj
-	$(CC) -Iinc -O0 -g3 -Wall -c $<
-	$(CC) -Iinc -masm=intel -g3 -Wall -c $< -S
+	$(CC) -Iinc -Wall -c $<
+	$(CC) -Iinc -Wall -c $< -S
 endef
 
 main.o: main.cpp
-	$(CC) -fopenmp -Iinc -O0 -g3 -Wall -c main.cpp
-	$(CC) -fopenmp -Iinc -masm=intel -g3 -Wall -c main.cpp -S
+	$(CC) -fopenmp -Iinc -Wall -c main.cpp
+	$(CC) -fopenmp -Iinc -Wall -c main.cpp -S
 
 %.o:	src/%.cpp inc/%.h
 	$(call build-obj)
 
 lib: lib-dep
-	$(CC) -fopenmp -o $(APP) main.cpp lib/$(LIB)
+	$(CC) -fopenmp -Iinc -o $(APP) main.cpp lib/$(LIB)
 
 lib-dep:
 	mkdir -p lib
