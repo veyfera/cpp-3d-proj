@@ -22,11 +22,12 @@ main.o: main.cpp
 	$(call build-obj)
 
 lib: lib-dep
-	g++ -fopenmp -o $(APP) main.cpp lib/$(LIB)
+	$(CC) -fopenmp -o $(APP) main.cpp lib/$(LIB)
 
 lib-dep:
-	g++ -fPIC -c -Wall $(src_files)
-	g++ -shared $(obj_files) -o lib/$(LIB)
+	mkdir -p lib
+	$(CC) -fPIC -c -Wall $(src_files)
+	$(CC) -shared $(obj_files) -o lib/$(LIB)
 
 clean:
 	rm -f *.s *.o $(APP) lib/*.so
