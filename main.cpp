@@ -1,6 +1,6 @@
-#include "../inc/circle.h"
-#include "../inc/ellipse.h"
-#include "../inc/helix.h"
+#include "./inc/circle.h"
+#include "./inc/ellipse.h"
+#include "./inc/helix.h"
 
 #include <algorithm>
 #include <iostream>
